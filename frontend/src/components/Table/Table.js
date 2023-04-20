@@ -17,17 +17,17 @@ const Table = ({ requests }) => {
         </thead><br />
         <tbody>
           {requests.map((request) => (
-            <tr>
+            <tr value={request.id} key={request.id}>
               <td>
                 <input type="checkbox" name="" id="" />
               </td>
-              <td value={request.id} key={request.id}>
+              <td>
                 {request.title}
               </td>
-              <td value={request.id} key={request.id}>
+              <td>
                 {request.description}
               </td>
-              <td value={request.id} key={request.id}>
+              <td>
                 {request.value}
               </td>
               <td>

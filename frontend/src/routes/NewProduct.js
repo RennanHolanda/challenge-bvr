@@ -1,31 +1,36 @@
 import styles from "./NewProduct.module.css";
+import Form from "../components/project/Form";
 
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+
 
 // import { ApiAlert } from "../services/ApiAlert";
 
 const NewProduct = () => {
-  const [product, setProduct] = useState({
-    title: "",
-    description: "",
-    value: "",
-  });
 
-  const handleInput = (e) =>
-    setProduct({ ...product, [e.target.name]: e.target.value });
+  // const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(product);
-  };
+  async function createProduct(product) {
+    await fetch("http://localhost:5000/add_product",{
+      method: "POST",
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(product)
+    }).then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        // navigate("/")
+      })
+    .catch(err => console.log(err));
+  }
+     
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log(product);
+  // };
 
-  const navigate = useNavigate();
-
-  const handleCancel = (e) => {
-    e.preventDefault();
-    return navigate("/");
-  };
+ 
 
   // const handleHomePage = (e) => {
   //   e.preventDefault();
@@ -35,32 +40,7 @@ const NewProduct = () => {
   return (
     <div id={styles.register}>
       <h2>Novo produto</h2>
-      <form onSubmit={handleSubmit}>
-        <label> Nome do produto</label>
-        <input
-          type="text"
-          placeholder="ex: Iphone x"
-          onChange={handleInput}
-          name="title"
-        />
-        <label> Valor</label>
-        <input
-          type="text"
-          placeholder="R$ 0.00"
-          onChange={handleInput}
-          name="value"
-        />
-        <label>Descrição</label>
-        <textarea
-          cols="30"
-          rows="10"
-          onChange={handleInput}
-          name="description"
-        ></textarea>
-        <br />
-        <button onClick={handleCancel}>Cancelar</button>
-        <input type="submit" value="Salvar" />
-      </form>
+        <Form handleSubmit={createProduct} btnText="Salvar"/>
     </div>
   );
 };

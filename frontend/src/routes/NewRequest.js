@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import Api from "../services/Api";
-import Select from "../form/Select";
+import Select from "../components/form/Select";
 
 const NewRequest = () => {
   const [options, setOptions] = useState([]);

@@ -1,6 +1,6 @@
 import styles from "./Select.module.css";
 
-const Select = ({ title, categories }) => {
+const Select = ({ categories }) => {
   return (
     <div id={styles.area}>
       <select id={styles.select_product}>
