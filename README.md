@@ -41,7 +41,7 @@ Você pode visualizar o layout do projeto através do link https://github.com/bv
 
 para rodar o projeto basta seguir os seguintes comandos
 
-- npm init -y (atentar para nos diretorios do terminal do backend e frontend para baixar as dependêscias)
+- npm init -y (atentar para os diretorios do terminal do backend e frontend para baixar as dependências)
 
 .obs projeto executado com variáveis de ambientes
 
