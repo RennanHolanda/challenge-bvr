@@ -13,10 +13,6 @@ Projeto Full Stack
 
 <br>
 
-<p align="center">
-  <img alt="Challenge" src=".github/capa.png" width="100%">
-</p>
-
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
