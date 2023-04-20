@@ -1,6 +1,7 @@
 import styles from "./NewRequest.module.css";
 import { Link } from "react-router-dom";
 
+
 const NewRequest = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ const NewRequest = () => {
           <option value="volvo">Pago</option>
         </select>
         <input type="submit" value="Cancelar" />
-        <input type="submit" value="Salvar" />
+        <input type="submit" value="Salvar"/>
       </form>
     </div>
   );

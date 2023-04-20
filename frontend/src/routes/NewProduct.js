@@ -1,8 +1,8 @@
 import styles from "./NewProduct.module.css";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
-// import Api from "../services/Api";
+import { ApiAlert } from "../services/ApiAlert";
 
 const NewProduct = () => {
     const [title, setTitle] = useState("");
@@ -51,7 +51,9 @@ const NewProduct = () => {
         value={description}>
         </textarea><br />
         <button onClick={handleProjects}>Cancelar</button>
-        <input type="submit" value="Salvar" />
+        <Link to="/">
+        <input type="submit" value="Salvar" onClick={ApiAlert}/>
+        </Link>
       </form>
     </div>
   );

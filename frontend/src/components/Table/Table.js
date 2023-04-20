@@ -1,5 +1,6 @@
 import styles from './Table.module.css'
 import { Link } from "react-router-dom"
+import { ApiDestroy } from '../../services/ApiAlert'
 
 const Table = ({id, title, description, value}) => {
   return (
@@ -18,7 +19,7 @@ const Table = ({id, title, description, value}) => {
             <button>Editar</button>
             </Link>
             <Link>
-            <button id={styles.btn_dager}>Excluir</button>
+            <button id={styles.btn_dager} onClick={ApiDestroy}>Excluir</button>
             </Link>
           </td>
         </tr>
