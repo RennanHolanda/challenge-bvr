@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './ErrorPage.module.css'
+import React from "react";
+import styles from "./ErrorPage.module.css";
 
-import Erro from "../../src/img/Erro.png"
+import Erro from "../../src/img/Erro.png";
 
 const ErrorPage = () => {
   return (
@@ -9,7 +9,7 @@ const ErrorPage = () => {
       <h2>Pagina não encontrada</h2>
       <img src={Erro} alt="Imagen de erro" />
     </div>
-  )
-}
+  );
+};
 
-export default ErrorPage
+export default ErrorPage;

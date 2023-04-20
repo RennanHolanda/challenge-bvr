@@ -14,22 +14,17 @@ const Table = ({ requests }) => {
             <th>Valor</th>
             <th>Acão</th>
           </tr>
-        </thead><br />
+        </thead>
+        <br />
         <tbody>
           {requests.map((request) => (
             <tr value={request.id} key={request.id}>
               <td>
                 <input type="checkbox" name="" id="" />
               </td>
-              <td>
-                {request.title}
-              </td>
-              <td>
-                {request.description}
-              </td>
-              <td>
-                {request.value}
-              </td>
+              <td>{request.title}</td>
+              <td>{request.description}</td>
+              <td>{request.value}</td>
               <td>
                 <Link to="/newproduct">
                   <button>Editar</button>

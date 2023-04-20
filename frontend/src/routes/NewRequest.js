@@ -36,7 +36,7 @@ const NewRequest = () => {
       </Link>
       <form onSubmit={handleSubmit}>
         <div id={styles.select}>
-        <Select categories={options}/>
+          <Select categories={options} />
         </div>
         <h4>Estatus de pagamento</h4>
         <select id={styles.select_status}>
