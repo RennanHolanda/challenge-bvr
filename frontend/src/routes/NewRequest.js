@@ -8,17 +8,17 @@ const NewRequest = () => {
   return (
     <div id={styles.register}>
       <h2>Novo pedido</h2>
-      <Link to="/newrequest">
-        <input type="submit" value="Novo pedido" />
+      <Link to="/newproduct">
+        <input type="submit" value="Novo produto" />
       </Link>
       <form onSubmit={handleSubmit}>
-        <select id="product">
-          <option></option>
+        <select id={styles.select}>
+          <option>Pordutos dispiníveis</option>
           <option>Iphone 11</option>
         </select>
         <input type="submit" value="Adicionar" />
-        <select id="product">
-          <option></option>
+        <select id={styles.select}>
+          <option>Status de pagamento</option>
           <option value="v">Aguardando</option>
           <option value="volvo">Pago</option>
         </select>
