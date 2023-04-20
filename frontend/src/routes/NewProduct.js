@@ -1,59 +1,65 @@
 import styles from "./NewProduct.module.css";
 
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { ApiAlert } from "../services/ApiAlert";
+
+// import { ApiAlert } from "../services/ApiAlert";
 
 const NewProduct = () => {
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [value, setValue] = useState("");
+  const [product, setProduct] = useState({
+    title: "",
+    description: "",
+    value: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleInput = (e) =>
+    setProduct({ ...product, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const product = {
-      title,
-      description,
-      value
-    };
     console.log(product);
   };
 
   const navigate = useNavigate();
 
-  const handleProjects = (e) => {
+  const handleCancel = (e) => {
     e.preventDefault();
     return navigate("/");
   };
+
+  // const handleHomePage = (e) => {
+  //   e.preventDefault();
+  //   return navigate("/");
+  // }
 
   return (
     <div id={styles.register}>
       <h2>Novo produto</h2>
       <form onSubmit={handleSubmit}>
         <label> Nome do produto</label>
-        <input 
-        type="text"
-        placeholder="ex: Iphone x"
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}/>
+        <input
+          type="text"
+          placeholder="ex: Iphone x"
+          onChange={handleInput}
+          name="title"
+        />
         <label> Valor</label>
-        <input 
-        type="text"
-        placeholder="R$ 0.00"
-        onChange={(e) => setValue(e.target.value)}
-        value={value}/>
+        <input
+          type="text"
+          placeholder="R$ 0.00"
+          onChange={handleInput}
+          name="value"
+        />
         <label>Descrição</label>
-        <textarea 
-        cols="30"
-        rows="10" 
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}>
-        </textarea><br />
-        <button onClick={handleProjects}>Cancelar</button>
-        <Link to="/">
-        <input type="submit" value="Salvar" onClick={ApiAlert}/>
-        </Link>
+        <textarea
+          cols="30"
+          rows="10"
+          onChange={handleInput}
+          name="description"
+        ></textarea>
+        <br />
+        <button onClick={handleCancel}>Cancelar</button>
+        <input type="submit" value="Salvar" />
       </form>
     </div>
   );
