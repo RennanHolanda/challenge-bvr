@@ -9,9 +9,11 @@ const Table = ({ requests }) => {
         <thead>
           <tr>
             <th></th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Valor</th>
+            <th>Data do pedido</th>
+            <th>Quantidade</th>
+            <th>Status</th>
+            <th>Valor Total</th>
+            <th>Id do produto</th>
             <th>Acão</th>
           </tr>
         </thead>
@@ -22,9 +24,11 @@ const Table = ({ requests }) => {
               <td>
                 <input type="checkbox" name="" id="" />
               </td>
-              <td>{request.title}</td>
-              <td>{request.description}</td>
-              <td>{request.value}</td>
+              <td>{request.purchase_date}</td>
+              <td>{request.amont}</td>
+              <td>{request.status}</td>
+              <td>{request.total_value}</td>
+              <td>{request.product_id}</td>
               <td>
                 <Link to="/newproduct">
                   <button>Editar</button>

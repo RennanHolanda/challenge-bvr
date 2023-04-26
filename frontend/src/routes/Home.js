@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     async function loadProducts() {
-      const response = await Api.get("/products");
+      const response = await Api.get("/requests");
       console.log(response.data);
       setProducts(response.data);
     }
